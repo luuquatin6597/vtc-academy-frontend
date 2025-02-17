@@ -5,7 +5,7 @@ import List from "./components/list";
 import Btn from "./components/btn";
 
 import React from "react";
-import Input from "./components/input";
+import LoginForm from "./components/loginForm";
 
 interface Item {
   name: string;
@@ -39,9 +39,6 @@ export default function Home() {
       category: "Music",
     },
   ];
-
-  const [email, setEmail] = React.useState("");
-  const [password, setPassword] = React.useState("");
 
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -87,11 +84,7 @@ export default function Home() {
           </div>
 
           <div className="flow-root">
-            <form className="flex flex-col gap-4">
-              <Input label="Email" type="text" placeholder="Email" value={email} onChange={setEmail} />
-              <Input label="Password" type="password" placeholder="Password" value={password} onChange={setPassword} />
-              <Btn title="Sign in" type="submit" color="blue-400" />
-            </form>
+            <LoginForm />
           </div>
         </div>
       </main>
