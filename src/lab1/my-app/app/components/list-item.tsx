@@ -5,7 +5,11 @@ interface ListItemProps {
 }
 
 const ListItem: React.FC<ListItemProps> = ({ item }) => {
-    return <li>{item}</li>;
+    return (
+        <>
+            <p>{item}</p>
+        </>
+    );
 };
 
 export default ListItem;
