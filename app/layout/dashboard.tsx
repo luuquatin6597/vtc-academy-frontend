@@ -6,7 +6,7 @@ import Components from './components';
 import PropsAndState from './propsAndState';
 import EventHandling from './event-handling';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
 

@@ -1,7 +1,7 @@
 import { Form, Input, Modal, Select } from "antd";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../store/store";
+import { RootState } from "../../../store/store";
 const { Option } = Select;
 
 interface UpdateModalProps {
@@ -10,7 +10,7 @@ interface UpdateModalProps {
     content: string;
     category: string;
     isModalVisible: boolean;
-    handleUpdate: (values: any) => void;
+    handleUpdate: (values: string) => void;
     handleCancel: () => void;
 }
 

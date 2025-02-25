@@ -25,6 +25,7 @@ export default function ListItem({ item, index, showDeleteConfirmModal, showUpda
 
     return (
         <List.Item
+            className={`${index}`}
             key={item.id}
             actions={[
                 <Switch

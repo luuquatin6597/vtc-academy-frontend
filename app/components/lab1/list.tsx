@@ -17,7 +17,7 @@ const List: React.FC<ListProps> = ({ items }) => {
     useEffect(() => {
         setData(items);
         setIsLoading(false);
-    }, []);
+    }, [items]);
 
     return (
         <ul>

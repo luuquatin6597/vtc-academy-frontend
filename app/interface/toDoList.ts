@@ -1,5 +1,3 @@
-import { Category } from "./category";
-
 export interface ToDoList {
     category: string;
     title: string;
