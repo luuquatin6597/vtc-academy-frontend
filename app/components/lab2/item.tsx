@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import BtnIcon from './btnIcon';
+import Image from 'next/image';
 
 interface ItemProps {
     item: { name: string; category: string };
@@ -16,7 +17,7 @@ const Item: React.FC<ItemProps> = ({ item, index }) => {
     return (
         <div className="flex items-center gap-5">
             <div className="shrink-0">
-                <img
+                <Image
                     className="w-10 h-10 rounded"
                     src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt=""

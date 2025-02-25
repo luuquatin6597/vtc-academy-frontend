@@ -3,7 +3,7 @@ import Btn from './btn';
 import Input from './input';
 import { useForm, SubmitHandler } from "react-hook-form";
 
-interface IFormInput {
+export interface IFormInput {
     email: string;
     password: string;
 }

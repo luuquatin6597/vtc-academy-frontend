@@ -1,21 +1,19 @@
 import * as React from 'react';
 import { UseFormRegister, FieldErrors } from 'react-hook-form';
-
-interface FormData {
-    [key: string]: string;
-}
+import { IFormInput } from './loginForm'; // Import để sử dụng kiểu form
 
 export interface InputProps {
     label?: string;
     type: string;
     placeholder: string;
-    name: string;
-    register: UseFormRegister<FormData>;
-    errors: FieldErrors<FormData>;
+    name: keyof IFormInput; // ✅ Giới hạn name trong IFormInput
+    register: UseFormRegister<IFormInput>; // ✅ Sửa any thành IFormInput
+    errors: FieldErrors<IFormInput>; // ✅ Sửa any thành IFormInput
 }
 
 const Input: React.FC<InputProps> = ({ label, type, placeholder, name, register, errors }) => {
-    const errorMessage = errors[name]?.message as string | undefined;
+    const errorMessage = errors[name]?.message?.toString(); // ✅ Đảm bảo kiểu dữ liệu
+
     return (
         <div className="mb-4">
             {label && (

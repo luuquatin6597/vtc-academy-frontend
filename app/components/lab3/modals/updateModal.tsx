@@ -2,17 +2,20 @@ import { Form, Input, Modal, Select } from "antd";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../store/store";
+
+import { ToDoList } from '../../../interface/toDoList';
 const { Option } = Select;
 
 interface UpdateModalProps {
-    image: string;
+    isModalVisible: boolean;
+    handleUpdate: (values: ToDoList) => void;  // ✅ Đổi từ string -> ToDoList
+    handleCancel: () => void;
     title: string;
     content: string;
     category: string;
-    isModalVisible: boolean;
-    handleUpdate: (values: string) => void;
-    handleCancel: () => void;
+    image?: string;
 }
+
 
 export default function UpdateModal({ image, title, content, category, isModalVisible, handleUpdate, handleCancel }: UpdateModalProps) {
     const [form] = Form.useForm();

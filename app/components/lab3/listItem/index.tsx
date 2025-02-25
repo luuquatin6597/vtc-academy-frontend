@@ -5,6 +5,7 @@ import DeleteIcon from '../icons/delete';
 import { useDispatch, useSelector } from 'react-redux';
 import { switchToDoList } from '../../../reducer/toDoList.reducer';
 import { RootState } from '../../../store/store';
+import Image from 'next/image';
 
 interface ListItemProps {
     item: ToDoList;
@@ -40,7 +41,7 @@ export default function ListItem({ item, index, showDeleteConfirmModal, showUpda
             ]}
         >
             <List.Item.Meta
-                avatar={<img src={item.image} alt={item.title} className="h-[50px] w-[50px] object-cover rounded-full" />}
+                avatar={<Image src={item.image} alt={item.title} width={50} height={50} className="object-cover rounded-full" />}
                 title={<a href="">{categories.find((category) => category.id === item.category)?.name} - {item.title}</a>}
                 description={item.content}
             />
