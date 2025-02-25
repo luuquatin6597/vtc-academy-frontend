@@ -1,0 +1,35 @@
+{
+  "name": "props-and-state",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prettier": "prettier --check \"app/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "prettier:fix": "prettier --write \"app/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.5.1",
+    "antd": "^5.24.1",
+    "next": "15.1.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-infinite-scroll-component": "^6.1.0",
+    "react-redux": "^9.2.0",
+    "react-hook-form": "^7.54.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.7",
+    "postcss": "^8",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5"
+  }
+}
