@@ -10,7 +10,6 @@ interface FormData {
 export default function HandlingKeyboard() {
     const [form] = Form.useForm();
     const [listRender, setListRender] = useState([] as string[]);
-    const [total, setTotal] = useState<number>(0);
 
     const handleFinishForm = (values: FormData) => {
         console.log('Success:', values);
@@ -18,19 +17,15 @@ export default function HandlingKeyboard() {
         form.resetFields();
     };
 
-    const calculateTotal = () => {
-        const sum = listRender.reduce((total, num) => total + parseInt(num), 0);
-        setTotal(sum);
-    }
-
     const handleDelete = (index: number) => {
         const updatedList = [...listRender];
         updatedList.splice(index, 1);
         setListRender(updatedList);
-        calculateTotal();
     }
 
-    useMemo(() => calculateTotal(), [listRender]);
+    const total = useMemo(() => {
+        return listRender.reduce((total, num) => total + parseInt(num), 0);
+    }, [listRender]);
 
     return (
         <>
@@ -59,7 +54,7 @@ export default function HandlingKeyboard() {
                 )}
             </ul>
 
-            <div className="bg-gray-100 rounded-md p-2">{total}</div>
+            <div className="bg-gray-100 rounded-md p-2">Total: {total}</div>
         </>
     );
 }

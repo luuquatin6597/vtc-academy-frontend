@@ -1,28 +1,28 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export default function useCounter() {
     const [counter, setCounter] = useState(0);
-    const [min, setMin] = useState<number | null>(0);
-    const [max, setMax] = useState<number | null>(0);
+    const [minLimit, setMinLimit] = useState<number | null>(null);
+    const [maxLimit, setMaxLimit] = useState<number | null>(null);
 
-    const handleIncrease = () => {
-        if (max !== null && counter >= max) return;
+    const handleIncrease = useCallback(() => {
+        if (maxLimit !== null && counter >= maxLimit) return;
         setCounter(counter + 1);
-    }
+    }, [counter, maxLimit]);
 
-    const handleDecrease = () => {
-        if (min !== null && counter <= min) return;
+    const handleDecrease = useCallback(() => {
+        if (minLimit !== null && counter <= minLimit) return;
         setCounter(counter - 1);
-    }
+    }, [counter, minLimit]);
 
-    const handleReset = () => {
+    const handleReset = useCallback(() => {
         setCounter(0);
-    }
+    }, []);
 
-    const handleLimit = (min: number, max: number) => {
-        setMin(min);
-        setMax(max);
-    }
+    const handleLimit = useCallback((min: number, max: number) => {
+        setMinLimit(min);
+        setMaxLimit(max);
+    }, []);
 
     return {
         counter,

@@ -1,14 +1,18 @@
 import { Button } from "antd";
 import useCounter from '../../hooks/useCounter';
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 
 export default function CustomHook() {
     const { counter, handleIncrease, handleDecrease, handleReset, handleLimit } = useCounter();
     const limit = { min: -10, max: 10 };
 
-    useEffect(() => {
+    const setLimits = useCallback(() => {
         handleLimit(limit.min, limit.max);
-    }, [handleLimit]);
+    }, [handleLimit, limit.min, limit.max]);
+
+    useEffect(() => {
+        setLimits();
+    }, [setLimits]);
 
     return (
         <>

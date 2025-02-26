@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
 
-export default function Memoization() {
-    const bgColors = { red: 'bg-red-500', blue: 'bg-blue-500' };
-    const contentText = { hover: 'Hover me!', hovered: 'Hovered!' };
+const bgColors = { red: 'bg-red-500', blue: 'bg-blue-500' };
+const contentText = { hover: 'Hover me!', hovered: 'Hovered!' };
 
+export default function Memoization() {
     const [isHovered, setIsHovered] = useState(false);
 
     const bgColor = useMemo(() => {
