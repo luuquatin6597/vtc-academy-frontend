@@ -21,6 +21,8 @@ const Item: React.FC<ItemProps> = ({ item, index }) => {
                     className="w-10 h-10 rounded"
                     src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                     alt=""
+                    width={40}
+                    height={40}
                 />
             </div>
             <div className="shrink-0">

@@ -5,6 +5,7 @@ import Introduction from './introduction';
 import Components from './components';
 import PropsAndState from './propsAndState';
 import EventHandling from './event-handling';
+import Hooks from './hooks';
 
 const { Content, Sider } = Layout;
 
@@ -38,6 +39,7 @@ export default function Dashboard() {
         getItem('Lab 2', '2', undefined, () => setSelectedComponent('2')),
         getItem('Lab 3', '3', undefined, () => setSelectedComponent('3')),
         getItem('Lab 4', '4', undefined, () => setSelectedComponent('4')),
+        getItem('Lab 5', '5', undefined, () => setSelectedComponent('5')),
     ];
 
     const renderComponent = () => {
@@ -50,6 +52,8 @@ export default function Dashboard() {
                 return <PropsAndState />;
             case '4':
                 return <EventHandling />;
+            case '5':
+                return <Hooks />;
             default:
                 return <Introduction />;
         }
