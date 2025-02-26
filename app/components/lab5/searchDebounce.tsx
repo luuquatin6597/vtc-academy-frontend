@@ -38,7 +38,7 @@ export default function SearchDebounce() {
                 {result === '' ? <p className="pb-4 mt-4 text-center text-gray-400">No result found</p> : (
                     [1, 2, 3, 4].map((item, index) => (
                         <div key={index} className="pb-4 mt-4 border-b border-gray-100">
-                            <h3>Result {index} for: "{result}"</h3>
+                            <h3>Result {index} for: &quot;{result}&quot;</h3>
                             <p className="text-gray-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus cupiditate quis officiis quasi nisi, fugit minima recusandae officia dignissimos! At, voluptates quis? Amet harum odit enim neque provident, doloribus laboriosam.</p>
                         </div>
                     ))
